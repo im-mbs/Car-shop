@@ -1,0 +1,52 @@
+$mainBlue : #40ACF1;
+$mainWhite : #ffffff;
+$mainBlack : #292F36;
+$mainYellow : #e3b305;
+$mainGray : rgb(216 , 214 , 214);
+$transparentBlue : rgba(64, 172, 241, 0.7);
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+    color: $mainBlack;
+    background-color: $mainWhite;
+}
+
+.font-weight-bold{
+    font-weight: 700;
+}
+
+@mixin specialText{
+    background-color: $transparentBlue;
+    color: $mainWhite;
+    padding: 16px 30px;
+    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+}
+
+@mixin sizeText{
+    @media (max-width:780px) {
+        font-size: 1.5rem;
+    }
+
+    @media (max-width:560px) {
+        font-size: 1.1rem;
+    }
+}
+
+
+@keyframes zooming{
+    0%{
+        transform: scale(1);
+    }   
+    50%{
+        transform: scale(1.2) translateX(-5%);
+    }
+    100%{
+        transform: scale(1);
+    }
+}

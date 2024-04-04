@@ -1,0 +1,342 @@
+@import 'structure';
+
+.navbar{
+    height: 80px;
+
+    .navbar-toggler{
+        outline-color: $mainBlue  !important;
+        margin-top: -30px;
+
+        .navbar-icon{
+            font-size: 2rem;
+        }
+    }
+
+    .navbar-brand{
+        img{
+            width: 150px;
+            height: 90px;
+            @media( max-width:992px) {
+                margin-top: -15px;
+            }
+        }
+    }
+    
+    .navbar-nav{
+        margin: auto;
+
+        .nav-link{
+            color: $mainBlack;
+
+            &:hover{
+                color: $mainBlue;
+            }
+        }
+    }
+
+    .nav-icons{
+        margin-right: 20px;
+
+        .nav-icon{
+            text-decoration: none;
+            font-size: 1.8rem;
+            padding: 0 8px;
+
+            &:hover{
+                color: $mainBlack;
+            }
+        }
+    }
+}
+
+.header{
+    color: $mainWhite;
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 50% 100%,0 95%);
+
+    .height-max{
+        min-height: calc(100vh - 80px);
+        background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url("../image/header-background.jpg") center/cover fixed no-repeat;
+        animation-name: zooming;
+        animation-duration: 15s;
+        animation-delay: 3s;
+        animation-iteration-count: infinite;
+
+        h2{
+            font-weight: 700;
+        }
+    }
+
+    .title-heading{
+        border-left:0.2rem solid $mainBlue;
+        padding: 5px 20px 5px 15px;
+        margin-bottom: 10px;
+    }
+}
+
+.web-heading{
+    .web-title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 50px 0 20px;
+
+        h1{
+            @include sizeText;
+            margin: 0 3px;
+            font-weight: 700;
+            font-size: 2.2rem;
+        }
+
+        .special-text{
+            @include specialText;
+        }
+    }
+
+    .skills{
+        margin: 60px 10px 20px;
+        a{
+            font-size: 2.5rem;
+            background: $mainGray;
+            color: $mainYellow;
+            padding: 13px;
+
+            &:hover{
+                color: $mainBlue;
+            }
+            
+            i{
+                font-size: 2.5rem;
+                margin-bottom: 35px;
+            }
+        }
+        .skills-underline{
+            width: 4.5rem;
+            height: 5px;
+            background: $mainBlue;
+            margin: 1rem auto;
+        }
+        p{
+            padding: 5px 10px;
+        }
+    }
+}
+
+.inventory{
+    background-color: $mainGray;
+    padding-bottom: 60px;
+
+    .web-title{
+        h1{
+            margin-top: 30px;
+        }
+    }
+
+    .car-card{
+        border-radius: 0;
+
+        .car-img{
+            border-top-left-radius: 0;
+        }
+        .car-value{
+            background-color: $mainBlue;
+            color: $mainWhite;
+            clip-path: polygon(15% 0, 85% 0, 100% 100%, 0 100%);
+            transition: all 1s linear;
+            &:hover{
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+        }
+    }
+}
+
+.question{
+    background: url(../image/questionBG.jpg) center/cover fixed no-repeat;
+
+    .question-gray{
+        background: rgba(79, 109, 122, 0.85);
+    }
+    .question-yellow{
+        background: rgba(277, 181, 5, 0.75);
+    }
+    .question-icon{
+        margin-left: 20px;
+        font-size: 4rem;
+        color: $mainBlue;
+        transition: all 0.5s ease-in-out;
+        &:hover{
+            color: $mainBlue;
+            transform: translateY(-10%);
+        }
+    }
+    .question-info{
+        color: $mainWhite;
+    }
+}
+
+.featured{
+    background: $mainGray;
+
+    .featured-info{
+        padding-top: 60px;
+    }
+
+    .featured-item{
+        background-color: $mainWhite;
+        opacity: 0.5;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 1s ease-in-out;
+
+        &:hover{
+            opacity: 1;
+            transform: scale(1.05);
+        }
+        .featured-icon{
+            cursor: pointer;
+            color: $mainBlue;
+            font-size: 1.5rem;
+            transition: all 0.5s ease-in-out;
+        }
+    }
+    .img-container{
+        overflow: hidden;
+        position: relative;
+        background: $mainBlue;
+        
+        .featured-img{
+            transition: all 1s ease-in-out;
+        }
+    }
+
+    .featured-link{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 3rem;
+        color: $mainBlack;
+        opacity: 0;
+        transition: all 1s ease-in-out;
+        transform: translate(-50% , -50%);
+        &:hover{
+            color: $mainWhite;
+        }
+    }
+    .img-container:hover .featured-img{
+        transform: scale(1.3);
+        opacity: 0.5;
+    }
+
+    .img-container:hover .featured-link{
+        opacity: 1;
+    }
+
+}
+
+.gallery{
+
+    .gallery-item{
+        position: relative;
+        cursor: pointer;
+        background: $mainYellow;
+        margin: 10px;
+    }
+    .gallery-img{
+        transition: all 1s ease-in-out;
+    }
+    .gallery-item:hover .gallery-img{
+        opacity: 0.5;
+    }
+    .gallery-item::after{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        outline: 0.5rem solid $mainWhite;
+        outline-offset: -2rem;
+        transition: all 1s ease-in-out;
+        transform: scale(0);
+    }
+    .gallery-item:hover::after{
+        transform: scale(1);
+    }
+}
+
+.contact{
+    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url("../image/integra23-038_1920x1400.jpg") center/cover fixed no-repeat;
+
+    .contact-input{
+        font-size: 1.5rem;
+        text-transform: capitalize;
+        background: transparent;
+        border-color: $mainYellow;
+        color: $mainYellow;
+        @media (max-width:993px) {
+            font-size: 1.2rem;
+        }
+        @media (max-width:520px) {
+            font-size: 1rem;
+        }
+        &::placeholder{
+            color: $mainYellow;
+        }
+        &:focus{
+            border-color: $mainYellow;
+            background: transparent;
+            box-shadow: none;
+        }
+    }
+    .contact-btn{
+        text-transform: uppercase;
+        width: 100%;
+        border-color: $mainYellow;
+        color: $mainYellow;
+        &:hover{
+            background: $mainYellow;
+            border-color: $mainBlack;
+            color: $mainWhite
+        }
+    }
+}
+
+.quotes{
+    .customer-card{
+        color: $mainGray;
+        margin-top: -3.5rem;
+    }
+    .customer-img{
+        border: 0.4rem solid $mainWhite;
+        width: 90px;
+        @media (max-width:380px) {
+            width: 70px;
+            border: 0.2rem solid $mainWhite;
+        }
+    }
+    .customer-name{
+        color: $mainBlue;
+    }
+    .customer-icon{
+        color: $mainGray;
+        font-size: 2rem;
+    }
+    .customer-quote{
+        max-width: 90%;
+    }
+}
+
+.footer{
+    background: $mainBlack;
+
+    .footer-icon{
+        font-size: 1.5rem;
+        text-decoration: none;
+        color: $mainYellow;
+        transition: all 0.8s ease-in-out;
+
+        &:hover{
+            color: $mainBlue;
+        }
+    }
+}
